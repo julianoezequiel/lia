@@ -387,6 +387,21 @@ export class MenuConfig {
 					translate: 'MENU.DASHBOARD',
 					bullet: 'dot',
 				},
+				
+				{
+					title: 'Cadastros',
+					root: true,
+					icon: 'flaticon2-writing',
+					translate: 'MENU.CADASTROS',
+					submenu: [
+						{
+							title: 'Materiais',
+							page: '/materiais',
+							icon: 'flaticon2-delivery-package',
+							translate: 'MENU.MATERIAIS',
+						}						
+					]
+				},
 				{
 					title: 'Layout Builder',
 					root: true,

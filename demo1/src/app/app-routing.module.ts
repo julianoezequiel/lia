@@ -6,6 +6,8 @@ import {BaseComponent} from './views/theme/base/base.component';
 import {ErrorPageComponent} from './views/theme/content/error-page/error-page.component';
 // Auth
 import {AuthGuard} from './core/auth';
+import { ListaMateriaisComponent } from './views/pages/cadastros/lista-materiais/lista-materiais.component';
+import { CadastroMateriaisComponent } from './views/pages/cadastros/cadastro-materiais/cadastro-materiais.component';
 
 const routes: Routes = [
 	{path: 'auth', loadChildren: () => import('app/views/pages/auth/auth.module').then(m => m.AuthModule)},
@@ -18,6 +20,14 @@ const routes: Routes = [
 			{
 				path: 'dashboard',
 				loadChildren: () => import('app/views/pages/dashboard/dashboard.module').then(m => m.DashboardModule),
+			},
+			{
+				path: 'materiais',
+				component: ListaMateriaisComponent,
+			},
+			{
+				path: 'materiais/edicao',
+				component: CadastroMateriaisComponent,
 			},
 			{
 				path: 'mail',

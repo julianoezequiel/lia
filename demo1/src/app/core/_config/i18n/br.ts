@@ -13,7 +13,8 @@ export const locale = {
 			FEATURES: 'Features',
 			APPS: 'Apps',
 			DASHBOARD: 'Painel de Controle',
-			
+			CADASTROS: 'Cadastros',
+			MATERIAIS:'Materiais'
 		},
 		SUB_HEADER:{
 			TITLE:'Painel de controle',

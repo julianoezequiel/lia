@@ -281,9 +281,12 @@ export class AuthService {
 		return this.afAuth.signInWithPopup(provider)
 		.then((result) => {
 		  this.SetUserData(result.user);
-		  this.ngZone.run(() => {
+		  let user = result.user;
+		  localStorage.setItem('user', JSON.stringify(user));
+		  this.store.dispatch(new Login({authToken: user.getIdToken.toString()}));
+		//   this.ngZone.run(() => {
 			this.router.navigate(['dashboard']);
-		  });
+		//   });
 		}).catch((error) => {
 		  window.alert(error)
 		})
@@ -301,7 +304,7 @@ export class AuthService {
 		  photoURL: user.photoURL,
 		  emailVerified: user.emailVerified
 		}
-		this.store.dispatch(new Login({authToken: user.accessToken}));
+		
 		return userRef.set(userData, {
 		  merge: true
 		})

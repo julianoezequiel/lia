@@ -43,7 +43,8 @@ export class RoleEffects {
             ofType<AllRolesRequested>(RoleActionTypes.AllRolesRequested),
             withLatestFrom(this.store.pipe(select(allRolesLoaded))),
             filter(([action, isAllRolesLoaded]) => !isAllRolesLoaded),
-            mergeMap(() => this.auth.getAllRoles()),
+            // mergeMap(() => this.auth.getAllRoles()),
+            mergeMap(() => []),
             map(roles => {
                 return new AllRolesLoaded({roles});
             })
