@@ -6,7 +6,17 @@ export const environment = {
   production: false,
   isMockEnabled: false, // You have to switch this, when your real back-end is done
   authTokenKey: 'authce9d77b308c149d5992a80073637e4d5',
-  baseUrl:'http://localhost:5010/gerenciamento-revendas'
+  baseUrl:'http://localhost:5010/gerenciamento-revendas',
+  firebase : {
+    apiKey: "AIzaSyAg18M89vyn0ipBa3saWYKlwpvontETApQ",
+    authDomain: "lia-app-e4bf0.firebaseapp.com",
+    databaseURL: "https://lia-app-e4bf0.firebaseio.com",
+    projectId: "lia-app-e4bf0",
+    storageBucket: "lia-app-e4bf0.appspot.com",
+    messagingSenderId: "490237104479",
+    appId: "1:490237104479:web:086fb2ba9272db43a3a6ea",
+    measurementId: "G-5EQ0CH2516"
+  }
 };
 
 /*

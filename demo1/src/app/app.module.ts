@@ -61,6 +61,10 @@ import * as scss from 'highlight.js/lib/languages/scss';
 import * as xml from 'highlight.js/lib/languages/xml';
 import * as json from 'highlight.js/lib/languages/json';
 
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import '@angular/localize/init';
 
 // tslint:disable-next-line:class-name
@@ -92,6 +96,9 @@ export function hljsLanguages(): HighlightLanguage[] {
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
+		AngularFireModule.initializeApp(environment.firebase),
+    	AngularFireAuthModule,
+    	AngularFirestoreModule,
 		BrowserAnimationsModule,
 		BrowserModule,
 		AppRoutingModule,

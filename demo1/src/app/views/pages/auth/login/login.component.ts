@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 	 */
 	constructor(
 		private router: Router,
-		private auth: AuthService,
+		public auth: AuthService,
 		private authNoticeService: AuthNoticeService,
 		private translate: TranslateService,
 		private store: Store<AppState>,
