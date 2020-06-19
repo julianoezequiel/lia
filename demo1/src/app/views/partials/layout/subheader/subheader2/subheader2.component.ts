@@ -65,9 +65,11 @@ export class Subheader2Component implements OnInit, OnDestroy, AfterViewInit {
 					this.translationService.traduzir(bt.title,{}).subscribe((val)=>{
 						this.title = val;
 					});
-					this.translationService.traduzir(bt.desc,{}).subscribe((val)=>{
-						this.desc = val;
-					});
+					if(bt?.desc){
+						this.translationService.traduzir(bt?.desc,{}).subscribe((val)=>{
+							this.desc = val;
+						});
+					}
 				});
 			}
 		}));

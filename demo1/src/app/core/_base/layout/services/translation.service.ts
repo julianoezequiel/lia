@@ -74,7 +74,9 @@ export class TranslationService {
 	}
 
 	traduzir(key,param){
-		return this.translate.get(key,param);
+		if(key){
+			return this.translate.get(key,param);
+		}
 	}
 
 	getTranslate(){

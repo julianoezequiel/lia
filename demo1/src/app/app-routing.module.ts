@@ -26,7 +26,7 @@ const routes: Routes = [
 				component: ListaMateriaisComponent,
 			},
 			{
-				path: 'materiais/edicao',
+				path: 'materiais/edicao/:id',
 				component: CadastroMateriaisComponent,
 			},
 			{
