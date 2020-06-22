@@ -30,12 +30,12 @@ export class ListaMateriaisComponent implements OnInit {
 	// Table fields
 	dataSource: any[];
 	displayedColumns = [
-		"select",
-		"id",
-		"username",
-		"email",
-		"fullname",
-		"actions",
+		"descricao",
+		"valor_entrada",
+		"valor_saida",
+		"quantidade",
+		"tipo",
+		"acoes"
 	];
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 	@ViewChild("sort1", { static: true }) sort: MatSort;
@@ -62,7 +62,10 @@ export class ListaMateriaisComponent implements OnInit {
           isEdit: false,
           descricao: e.payload.doc.data()["descricao"],
           metrica: e.payload.doc.data()["metrica"],
-          quantidade: e.payload.doc.data()["quantidade"],
+		  quantidade: e.payload.doc.data()["quantidade"],
+		  valor_entrada:e.payload.doc.data()["valor_entrada"],
+		  valor_saida:e.payload.doc.data()["valor_saida"]
+
         };
       });
     });

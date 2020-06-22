@@ -5,4 +5,6 @@ export  interface Material{
     descricao:string;
     quantidade:number;
     metrica:Metrica;
+    valor_entrada:number;
+    valor_saida:number;
 }

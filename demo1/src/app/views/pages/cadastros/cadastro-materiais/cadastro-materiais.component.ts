@@ -57,6 +57,8 @@ export class CadastroMateriaisComponent implements OnInit {
 				descricao: "",
 			},
 			quantidade: 0,
+			valor_entrada:0,
+			valor_saida:0
 		};
 		this.metricaSubject.next(this.material.metrica);
 		this.oldMaterial = Object.assign({}, this.material);
@@ -71,6 +73,7 @@ export class CadastroMateriaisComponent implements OnInit {
 						.valueChanges();
 					material.subscribe((value) => {
 						this.material = value;
+						this.material._id = id;
 						this.titulo.next(`Editar - ${this.material.descricao}`)	;		
 						this.initMaterial();
 					});						
@@ -145,9 +148,11 @@ export class CadastroMateriaisComponent implements OnInit {
 		const controls = this.userForm.controls;
 		const material: Material = {
 			descricao: controls.descricao.value,
-			metrica: controls.metrica.value,
-			quantidade: controls.quantidade.value,
+			metrica: this.metricas[controls.metrica.value -1],
+			quantidade:  controls.quantidade.value,
 			_id: controls._id.value,
+			valor_entrada:controls.valor_entrada.value,
+			valor_saida:controls.valor_saida.value
 		};
 
 		return material;
@@ -202,6 +207,8 @@ export class CadastroMateriaisComponent implements OnInit {
 			metrica: [this.material?.metrica?._id, Validators.required],
 			quantidade: [this.material.quantidade],
 			_id: [this.material._id],
+			valor_entrada:[this.material.valor_entrada],
+			valor_saida:[this.material.valor_saida]
 		});
 	}
 	/**

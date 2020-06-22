@@ -19,9 +19,9 @@
 				<div class="row align-items-center">
 					<div class="col-md-2 kt-margin-bottom-10-mobile">
 						<mat-form-field class="mat-form-field-fluid">
-							<input matInput placeholder="Search user" #searchInput placeholder="Search">
+							<input matInput placeholder="Search user" #searchInput placeholder="Buscar">
 							<mat-hint align="start">
-								<strong>Search</strong> in all fields
+								<strong>Consultar</strong> em todos os campos
 							</mat-hint>
 						</mat-form-field>
 					</div>
@@ -72,42 +72,34 @@
 
 				<!-- Table with selection -->
 				<!-- https://run.stackblitz.com/api/angular/v1?file=app%2Ftable-selection-example.ts -->
-				<ng-container matColumnDef="select">
-					<mat-header-cell *matHeaderCellDef class="mat-column-checkbox">
-						<mat-checkbox (change)="$event ? masterToggle() : null"
-							[checked]="selection.hasValue() && isAllSelected()"
-							[indeterminate]="selection.hasValue() && !isAllSelected()">
-						</mat-checkbox>
-					</mat-header-cell>
-					<mat-cell *matCellDef="let row" class="mat-column-checkbox">
-						<mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
-						</mat-checkbox>
-					</mat-cell>
-				</ng-container>
-
-				<ng-container matColumnDef="id">
-					<!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->
-					<mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
-					<mat-cell *matCellDef="let m">{{m.id}}</mat-cell>
-				</ng-container>
-
-				<ng-container matColumnDef="username">
+			
+				<ng-container matColumnDef="descricao">
 					<mat-header-cell *matHeaderCellDef mat-sort-header>Descrição</mat-header-cell>
 					<mat-cell *matCellDef="let m">{{m.descricao}}</mat-cell>
 				</ng-container>
 
-				<ng-container matColumnDef="email">
-					<mat-header-cell *matHeaderCellDef mat-sort-header class="email-cell">Email</mat-header-cell>
-					<mat-cell *matCellDef="let m" >{{m.metrica?.descricao}}</mat-cell>
+				<ng-container matColumnDef="valor_entrada">
+					<mat-header-cell *matHeaderCellDef mat-sort-header>Valor Entrada</mat-header-cell>
+					<mat-cell *matCellDef="let m">{{m.valor_entrada}}</mat-cell>
 				</ng-container>
 
-				<ng-container matColumnDef="fullname">
-					<mat-header-cell *matHeaderCellDef mat-sort-header>Full name</mat-header-cell>
+				<ng-container matColumnDef="valor_saida">
+					<mat-header-cell *matHeaderCellDef mat-sort-header>Valor Saída</mat-header-cell>
+					<mat-cell *matCellDef="let m">{{m.valor_saida}}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="quantidade">
+					<mat-header-cell *matHeaderCellDef mat-sort-header>Quantidade</mat-header-cell>
 					<mat-cell *matCellDef="let m">{{m.quantidade}}</mat-cell>
 				</ng-container>
 
-				<ng-container matColumnDef="actions">
-					<mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+				<ng-container matColumnDef="tipo">
+					<mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</mat-header-cell>
+					<mat-cell *matCellDef="let m">{{m.metrica?.descricao}}</mat-cell>
+				</ng-container>
+				
+				<ng-container matColumnDef="acoes">
+					<mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
 					<mat-cell *matCellDef="let m">
 						<button (click)="editar(m._id)" mat-icon-button color="primary" matTooltip="Editar material">
 							<mat-icon>create</mat-icon>
