@@ -8,6 +8,10 @@ import {ErrorPageComponent} from './views/theme/content/error-page/error-page.co
 import {AuthGuard} from './core/auth';
 import { ListaMateriaisComponent } from './views/pages/cadastros/lista-materiais/lista-materiais.component';
 import { CadastroMateriaisComponent } from './views/pages/cadastros/cadastro-materiais/cadastro-materiais.component';
+import { ListaSaidasComponent } from './views/pages/cadastros/lista-saidas/lista-saidas.component';
+import { CadastroSaidasComponent } from './views/pages/cadastros/cadastro-saidas/cadastro-saidas.component';
+import { ListaEntradasComponent } from './views/pages/cadastros/lista-entradas/lista-entradas.component';
+import { CadastroEntradasComponent } from './views/pages/cadastros/cadastro-entradas/cadastro-entradas.component';
 
 const routes: Routes = [
 	{path: 'auth', loadChildren: () => import('app/views/pages/auth/auth.module').then(m => m.AuthModule)},
@@ -28,6 +32,26 @@ const routes: Routes = [
 			{
 				path: 'materiais/edicao/:id',
 				component: CadastroMateriaisComponent,
+			},
+			{
+				path: 'materiais/edicao',
+				component: CadastroMateriaisComponent,
+			},
+			{
+				path: 'saidas',
+				component: ListaSaidasComponent,
+			},
+			{
+				path: 'saidas/edicao/:id',
+				component: CadastroSaidasComponent,
+			},
+			{
+				path: 'entradas',
+				component: ListaEntradasComponent,
+			},
+			{
+				path: 'entradas/edicao/:id',
+				component: CadastroEntradasComponent,
 			},
 			{
 				path: 'mail',

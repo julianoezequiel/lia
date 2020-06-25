@@ -15,9 +15,13 @@ import { ListaMateriaisComponent } from './cadastros/lista-materiais/lista-mater
 import { CadastroMateriaisComponent } from './cadastros/cadastro-materiais/cadastro-materiais.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule, MatMenuModule, MatSelectModule, MatInputModule, MatTableModule, MatAutocompleteModule, MatRadioModule, MatIconModule, MatNativeDateModule, MatProgressBarModule, MatDatepickerModule, MatCardModule, MatPaginatorModule, MatSortModule, MatCheckboxModule, MatProgressSpinnerModule, MatSnackBarModule, MatExpansionModule, MatTabsModule, MatTooltipModule, MatDialogModule } from '@angular/material';
+import { ListaSaidasComponent } from './cadastros/lista-saidas/lista-saidas.component';
+import { CadastroSaidasComponent } from './cadastros/cadastro-saidas/cadastro-saidas.component';
+import { ListaEntradasComponent } from './cadastros/lista-entradas/lista-entradas.component';
+import { CadastroEntradasComponent } from './cadastros/cadastro-entradas/cadastro-entradas.component';
 
 @NgModule({
-	declarations: [MyPageComponent, CadastroMateriaisComponent, ListaMateriaisComponent],
+	declarations: [MyPageComponent, CadastroMateriaisComponent, ListaMateriaisComponent, ListaSaidasComponent, CadastroSaidasComponent, ListaEntradasComponent, CadastroEntradasComponent],
 	exports: [CadastroMateriaisComponent, ListaMateriaisComponent],
 	imports: [
 		CommonModule,

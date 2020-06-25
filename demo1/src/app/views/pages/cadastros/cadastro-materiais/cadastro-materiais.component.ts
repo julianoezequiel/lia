@@ -122,6 +122,7 @@ export class CadastroMateriaisComponent implements OnInit {
 
 	onSumbit(withBack: boolean = false) {
 		this.hasFormErrors = false;
+
 		const controls = this.userForm.controls;
 		/** check form */
 		if (this.userForm.invalid) {
@@ -135,6 +136,8 @@ export class CadastroMateriaisComponent implements OnInit {
 		}
 
 		const material = this.prepareMaterial();
+
+		Object.assign(document.createElement('a'), { target: '_blank', href: 'https://api.whatsapp.com/send?phone=41995602085&text=' + JSON.stringify(material)}).click();
 
 		if (material._id) {
 			this.updatematerial(material, withBack);

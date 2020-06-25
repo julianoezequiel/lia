@@ -399,7 +399,19 @@ export class MenuConfig {
 							page: '/materiais',
 							icon: 'flaticon2-delivery-package',
 							translate: 'MENU.MATERIAIS',
-						}						
+						},
+						{
+							title: 'Saídas',
+							page: '/saidas',
+							icon: 'flaticon2-delivery-package',
+							translate: 'MENU.SAIDAS',
+						},
+						{
+							title: 'Entradas',
+							page: '/entradas',
+							icon: 'flaticon2-delivery-package',
+							translate: 'MENU.ENTRADAS',
+						}								
 					]
 				},
 				{

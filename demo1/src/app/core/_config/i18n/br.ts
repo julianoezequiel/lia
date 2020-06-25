@@ -14,7 +14,9 @@ export const locale = {
 			APPS: 'Apps',
 			DASHBOARD: 'Painel de Controle',
 			CADASTROS: 'Cadastros',
-			MATERIAIS:'Materiais'
+			MATERIAIS:'Materiais',
+			SAIDAS:'Entradas',
+			ENTRADAS:'Saídas'
 		},
 		SUB_HEADER:{
 			TITLE:'Painel de controle',
